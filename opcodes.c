@@ -1,4 +1,4 @@
-#include <monty.h>
+#include "monty.h"
 
 /**
  * op_push - Pushes the node whether the list is empty or occupied.
@@ -9,10 +9,10 @@
 
 void op_push(stack_t **stack, unsigned int line_number)
 {
-	int n;
 	(void)line_number;
+	int n;
 
-	n = atoi(token_2);
+	n = atoi(op_token2);
 	if (*stack == NULL)
 		push_node_empty(stack, n);
 	else
@@ -28,8 +28,8 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 void op_pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t help;
 	(void)line_number;
+	stack_t help;
 
 	if (stack == NULL)
 		return;

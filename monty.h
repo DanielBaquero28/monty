@@ -1,11 +1,16 @@
 #ifndef HEADER_MONTY_FILE
 #define HEADER_MONTY_FILE
 
+/* Libraries */
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <stddef.h>
 #include <errno.h>
+
+/* Opcode and argument tokens */
+extern char *op_token;
+extern char *op_token2;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,7 +42,10 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Opcode Functions */
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 
+/* Opcode Helper Functions */
+void *get_opcode(stack_t **stack, char *op_token, unsigned int line_number);
 #endif
