@@ -8,8 +8,7 @@
 #include <stddef.h>
 #include <errno.h>
 
-/* Opcode and argument tokens */
-extern char *op_token;
+/* Opcode's argument token */
 extern char *op_token2;
 
 /**
@@ -47,5 +46,10 @@ void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 
 /* Opcode Helper Functions */
+stack_t *push_node_empty(stack_t **stack, int n);
+stack_t *push_node_full(stack_t **stack, int n);
 void *get_opcode(stack_t **stack, char *op_token, unsigned int line_number);
+
+/** Manipulation Helpers */
+int is_number(char *op_token);
 #endif

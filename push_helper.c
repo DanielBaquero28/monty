@@ -33,7 +33,7 @@ stack_t *push_node_empty(stack_t **stack, int n)
  * Return: New Node.
 **/
 
-stack_t *push_node_empty(stack_t **stack, int n)
+stack_t *push_node_full(stack_t **stack, int n)
 {
 	stack_t new_node;
 	stack_t help;

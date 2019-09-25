@@ -9,8 +9,13 @@
 
 void op_push(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number;
 	int n;
+
+	if (!is_number(op_token2) || op_token2 == NULL || stack == NULL)
+	{
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	n = atoi(op_token2);
 	if (*stack == NULL)
@@ -29,12 +34,15 @@ void op_push(stack_t **stack, unsigned int line_number)
 void op_pall(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
-	stack_t help;
+	stack_t help = NULL;
 
 	if (stack == NULL)
-		return;
+	{
+		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	if (*stack == NULL)
-		printf("");
+		exit(EXIT_SUCCESS);
 
 	help = *stack;
 

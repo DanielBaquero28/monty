@@ -1,6 +1,5 @@
 #include "monty.h"
 
-char *op_token = NULL;
 char *op_token2 = NULL;
 
 /**
@@ -14,7 +13,7 @@ int main(int argc, char **argv)
 {
 	FILE *m_file;
 	int line_number;
-	char *line = NULL;
+	char *line = NULL, *op_token = NULL;
 	stack_t *stack = NULL;
 	size_t len = 0;
 	ssize_t read;
@@ -36,6 +35,7 @@ int main(int argc, char **argv)
 		op_token = strtok(line, " \n\t\a\r\b");
 		op_token2 = strtok(NULL, " \n\t\a\r\b");
 		get_opcode(&stack, op_token, line_number);
+		read = getline(&line, &len, m_file);
 		line_number++;
 	}
 
