@@ -29,15 +29,17 @@ int create_stack(stack_t **stack)
  * Return: Nothing.
 **/
 
-void free_stack(stack_t **stack)
+void free_stack(stack_t *stack)
 {
 	stack_t *help;
+	stack_t *temp;
 
-	while (*stack != NULL)
+	help = stack;
+	while (help != NULL)
 	{
-		help = *stack;
-		(*stack) = (*stack)->next;
+		temp = help->next;
 		free(help);
+		help = temp;
 	}
-	free(*stack);
+	stack = NULL;
 }

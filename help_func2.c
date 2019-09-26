@@ -14,7 +14,7 @@ char *change_to_str(int number)
 	int number_len = 0;
 	char *string_int;
 
-	help_number = abs_m(number);
+	help_number = abs(number);
 	number_len = length_number(help_number, 10);
 
 	if (number < 0 || num_v < 0)
@@ -29,19 +29,6 @@ char *change_to_str(int number)
 
 	return (string_int);
 }
-
-/**
- * abs_m - Finds the absolute value
- * @i: Integer from whick is applied the absolute function.
- * Return: Absolute Value.
- */
-unsigned int abs_m(int i)
-{
-	if (i < 0)
-		return (-(unsigned int)i);
-	return ((unsigned int)i);
-}
-
 
 /**
  * length_number - Finds the length for the number.
