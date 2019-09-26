@@ -11,7 +11,7 @@ char *op_token2 = NULL;
 
 int main(int argc, char **argv)
 {
-	FILE *m_file;
+	FILE *m_file = NULL;
 	int line_number;
 	char *line = NULL, *op_token = NULL;
 	stack_t *stack = NULL;
@@ -21,16 +21,17 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		stderr_file_usage();
 	m_file = fopen(argv[1], "r");
-	if (!m_file)
+	if (m_file == NULL)
 		stderr_fopen_file(argv[1]);
-	line_number = 1;
-	while ((read = getline(&line, &len, m_file)) != -1)
+	line_number = 0;
+	read = getline(&line, &len, m_file);
+	while (read != -1)
 	{
-		op_token = strtok(line, " \n\t\a\r\b");
-		op_token2 = strtok(NULL, " \n\t\a\r\b");
+		line_number++;
+		op_token = strtok(line, " \n\t\a\b");
+		op_token2 = strtok(NULL, " \n\t\a\b");
 		get_opcode(&stack, op_token, line_number);
 		read = getline(&line, &len, m_file);
-		line_number++;
 	}
 
 	free(line);

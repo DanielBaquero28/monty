@@ -19,7 +19,7 @@ stack_t *push_node_empty(stack_t **stack, int n)
 		return (NULL);
 	new_node->n = n;
 	new_node->prev = NULL;
-	new_node->next = NULL;
+	new_node->next = *stack;
 
 	*stack = new_node;
 	return (new_node);
@@ -44,17 +44,15 @@ stack_t *push_node_full(stack_t **stack, int n)
 	if (new_node == NULL)
 		return (NULL);
 
-	new_node->n = n;
-
 	help = *stack;
 
 	while (help->next != NULL)
 		help = help->next;
 
 	help->next = new_node;
+	new_node->n = n;
 	new_node->prev = help;
 	new_node->next = NULL;
 
-	*stack = new_node;
 	return (new_node);
 }

@@ -9,9 +9,11 @@
 
 void op_push(stack_t **stack, unsigned int line_number)
 {
-	int n;
+	int n = 0;
 
-	if (!is_number() || op_token2 == NULL || stack == NULL)
+	if (stack == NULL)
+		stderr_int_empty(line_number);
+	if (!is_number() || op_token2 == NULL)
 		stderr_int_empty(line_number);
 
 	n = atoi(op_token2);
@@ -39,11 +41,12 @@ void op_pall(stack_t **stack, unsigned int line_number)
 
 	help = *stack;
 
+	while (help->next != NULL)
+		help = help->next;
 	while (help->prev != NULL)
 	{
 		printf("%d\n", help->n);
 		help = help->prev;
 	}
-	if (help->prev == NULL)
-		printf("%d\n", help->n);
+	printf("%d\n", help->n);
 }

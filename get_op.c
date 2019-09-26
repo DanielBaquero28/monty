@@ -11,6 +11,7 @@
 int *get_opcode(stack_t **stack, char *op_token, unsigned int line_number)
 {
 	int i, label = 0;
+	char *instructions = NULL;
 
 	instruction_t op_instruc[] = {
 		{"push", op_push},
@@ -20,9 +21,10 @@ int *get_opcode(stack_t **stack, char *op_token, unsigned int line_number)
 
 	if (stack == NULL || op_token == NULL)
 		return (0);
-	for (i = 0; op_instruc[i].opcode != NULL; i++)
+	instructions = op_token;
+	for (i = 0; op_instruc[i].opcode; i++)
 	{
-		if (strcmp(op_token, op_instruc[i].opcode) == 0)
+		if (strcmp(instructions, op_instruc[i].opcode) == 0)
 		{
 			label = 1;
 			op_instruc[i].f(stack, line_number);
