@@ -30,7 +30,7 @@ void token_error(int stat_error)
 	char *new_node = NULL;
 
 	len = token_length();
-	new_node = malloc(sizeof(char *) *(len + 2));
+	new_node = malloc(sizeof(char *) * (len + 2));
 	if (new_node == NULL)
 		stderr_failed_malloc();
 	if (op_token2 == NULL)
