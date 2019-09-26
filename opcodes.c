@@ -104,6 +104,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 	{
 		stderr_pop(line_number);
+		free_stack(*stack);
 	}
 
 	if ((*stack)->prev == NULL && (*stack)->next == NULL)
