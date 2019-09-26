@@ -4,9 +4,14 @@
 /* Libraries */
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
+#include <ctype.h>
 #include <errno.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 /* Opcode's argument token */
 extern char *op_token2;
@@ -48,8 +53,15 @@ void op_pall(stack_t **stack, unsigned int line_number);
 /* Opcode Helper Functions */
 stack_t *push_node_empty(stack_t **stack, int n);
 stack_t *push_node_full(stack_t **stack, int n);
-void *get_opcode(stack_t **stack, char *op_token, unsigned int line_number);
+int *get_opcode(stack_t **stack, char *op_token, unsigned int line_number);
 
-/** Manipulation Helpers */
-int is_number(char *op_token);
+/* Error's Functions */
+void stderr_file_usage(void);
+void stderr_no_instruction(char *op_token, unsigned int line_number);
+void stderr_failed_malloc(void);
+void stderr_fopen_file(char *filename);
+void stderr_int_empty(unsigned int line_number);
+
+/* Manipulation Helpers */
+int is_number(void);
 #endif

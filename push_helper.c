@@ -10,7 +10,7 @@
 
 stack_t *push_node_empty(stack_t **stack, int n)
 {
-	stack_t new_node = NULL;
+	stack_t *new_node = NULL;
 
 	if (stack == NULL)
 		return (NULL);
@@ -35,8 +35,8 @@ stack_t *push_node_empty(stack_t **stack, int n)
 
 stack_t *push_node_full(stack_t **stack, int n)
 {
-	stack_t new_node;
-	stack_t help;
+	stack_t *new_node;
+	stack_t *help;
 
 	if (stack == NULL)
 		return (NULL);

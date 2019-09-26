@@ -19,16 +19,10 @@ int main(int argc, char **argv)
 	ssize_t read;
 
 	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+		stderr_file_usage();
 	m_file = fopen(argv[1], "r");
 	if (!m_file)
-	{
-		fprintf(stderr, "Error: Can't open file <%s>\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+		stderr_fopen_file(argv[1]);
 	line_number = 1;
 	while ((read = getline(&line, &len, m_file)) != -1)
 	{
