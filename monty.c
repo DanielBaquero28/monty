@@ -22,7 +22,9 @@ int main(int argc, char **argv)
 		stderr_file_usage();
 	m_file = fopen(argv[1], "r");
 	if (m_file == NULL)
+	{
 		stderr_fopen_file(argv[1]);
+	}
 	line_number = 0;
 	read = getline(&line, &len, m_file);
 	while (read != -1)
@@ -35,6 +37,7 @@ int main(int argc, char **argv)
 	}
 
 	free(line);
+	free_stack(stack);
 	line = NULL;
 	fclose(m_file);
 
