@@ -37,7 +37,7 @@ void op_add(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * nop - Doesn't do anything.
+ * op_nop - Doesn't do anything.
  * @stack: Points to the bottom of the stack.
  * @line_number: Line number where an error can occur.
  * Return: Nothing.

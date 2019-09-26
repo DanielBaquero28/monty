@@ -54,11 +54,11 @@ int length_number(unsigned int number, unsigned int help)
 /**
  * string_buff - Stuffs in each digit into a string with '\0'
  * and if negative '-' included.
- * @number: Number to be converted into a string.
+ * @num: Number to be converted into a string.
  * @help: Number used to divide the number and reduce it's length by one.
- * @string_int: Where the number converted into a string will be stored
+ * @str: Where the number converted into a string will be stored
  * one by one.
- * @lenght_number: Size of the buffer.
+ * @len: Size of the buffer.
  * Return: Nothing.
 **/
 
