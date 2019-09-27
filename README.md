@@ -27,6 +27,9 @@ Current opcodes are:
 8. nop : does not do anything
 <br>
 The monty language allows for any space before or after the opcode and its argument. ANy text after the argument is disregarded.
+Any line starting with a # is considered a comment.
+Currently the stack is implemented as a doubly linked list.
+
 
 ### Credits
 All code written by
