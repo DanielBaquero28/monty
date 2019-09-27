@@ -30,6 +30,19 @@ The monty language allows for any space before or after the opcode and its argum
 Any line starting with a # is considered a comment.
 Currently the stack is implemented as a doubly linked list.
 
+####Brainfuck program
+in the brainfuck folder: bf FILE.
+
+## Description of Files
+<h6>monty.h</h6>
+header file for the project, contains the struct used throughout.
+
+<h6>monty.c</h6>
+Entry point of the interpreter. Feeds a line at a time to execute
+
+
+
+
 
 ### Credits
 All code written by
