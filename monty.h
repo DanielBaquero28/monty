@@ -80,6 +80,12 @@ void op_pall(stack_t **stack, unsigned int line_number);
 void op_pint(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
 void op_swap(stack_t **stack, unsigned int line_number);
+void op_sub(stack_t **stack, unsigned int line_number);
+void op_add(stack_t **stack, unsigned int line_number);
+void op_nop(stack_t **stack, unsigned int line_number);
+void op_div(stack_t **stack, unsigned int line_number);
+void op_mul(stack_t **stack, unsigned int line_number);
+void op_mod(stack_t **stack, unsigned int line_number);
 
 /* Error's Functions */
 void stderr_file_usage(void);
@@ -90,8 +96,6 @@ void stderr_int_empty(unsigned int line_number);
 void stderr_pint(unsigned int line_number);
 void stderr_pop(unsigned int line_number);
 void stderr_op(unsigned int line_number, char *op);
-void op_add(stack_t **stack, unsigned int line_number);
-void op_nop(stack_t **stack, unsigned int line_number);
 
 /* Function Helpers */
 void token_error(int stat_error);
