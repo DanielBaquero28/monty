@@ -1,13 +1,22 @@
-<html>
-<h1>Project: Interpreter for Monty ByteCodes files.</h1>
-<p><strong>The goal of this project is to create an interpreter for Monty ByteCodes files.</strong></p>
-<body>
-<li>Task 0: Implement the push and pall opcodes.</li>
-<li>Task 1: Implement the pint opcode.</li>
-<li>Task 2: Implement the pop opcode.</li>
-<li>Task 3: Implement the swap opcode.</li>
-<li>Task 4: Implement the add opcode.</li>
-<li>Task 5: Implement the nop opcode.</li>
-</body>
-<footer>This project is made by: <strong>Daniel Baquero and Carlos Alvarez.</stong></footer>
-</html>
+# 0x19. C - Stacks, Queues - LIFO, FIFO
+
+---
+## Setup
+####Monty interpreter
+This command will be used to compile the monty interpreter:
+``gcc -Wall -Werror -Wextra -pedantic *.c -o monty``
+Please use gcc-4.8
+
+####Brainfuck programs
+To install the brainfuck interpreter:
+``sudo apt_get install bf``
+
+## Usage
+####Monty interpreter
+The MOnty language is a very simple programming languaje.
+
+
+### Credits
+All code written by
+[Daniel Baquero](https://github.com/DanielBaquero28)
+[Carlos Alvarez](https://github.com/charlyhackr/)
