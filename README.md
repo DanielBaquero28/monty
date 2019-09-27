@@ -18,7 +18,9 @@ Usage is : `./monty FILE` where `FILE` contains lines of commands.
 Lines are of the type `opcode [argument]`.
 Current opcodes are:
 1. Push: push onto stack. This OPCODE is the only one requiring an argument. must be an integer.
-
+2. Pall : print all stack
+3. pop : pop the value at the top of the stack
+4. pint : peek the top of the stack
 
 
 ### Credits
