@@ -13,17 +13,17 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (op_token2 == NULL)
 	{
-		stderr_int_empty(line_number);
 		free_stack(*stack);
 		free(gbl.line);
 		fclose(gbl.m_file);
+		stderr_int_empty(line_number);
 	}
 	if (!is_number() || stack == NULL)
 	{
-		stderr_int_empty(line_number);
 		free_stack(*stack);
 		free(gbl.line);
 		fclose(gbl.m_file);
+		stderr_int_empty(line_number);
 	}
 	num = atoi(op_token2);
 	if (*stack == NULL)
@@ -45,8 +45,8 @@ void op_pall(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL)
 	{
-		stderr_int_empty(line_number);
 		free_stack(*stack);
+		stderr_int_empty(line_number);
 	}
 	if (*stack == NULL)
 	{
@@ -77,14 +77,10 @@ void op_pint(stack_t **stack, unsigned int line_number)
 	stack_t *help;
 
 	if (stack == NULL)
-	{
 		stderr_pint(line_number);
-	}
 
 	if (*stack == NULL)
-	{
 		stderr_pint(line_number);
-	}
 
 	help = *stack;
 	while (help->next != NULL)
@@ -107,10 +103,10 @@ void op_pop(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		stderr_pop(line_number);
 		free_stack(*stack);
 		free(gbl.line);
 		fclose(gbl.m_file);
+		stderr_pop(line_number);
 	}
 
 	if ((*stack)->prev == NULL && (*stack)->next == NULL)
@@ -149,8 +145,12 @@ void op_swap(stack_t **stack, unsigned int line_number)
 	int i = 1;
 
 	if (stack == NULL || *stack == NULL)
+	{
+		free_stack(*stack);
+		free(gbl.line);
+		fclose(gbl.m_file);
 		stderr_op(line_number, "swap");
-
+	}
 	help = *stack;
 	while (help->next != NULL)
 	{
@@ -158,7 +158,13 @@ void op_swap(stack_t **stack, unsigned int line_number)
 		i++;
 	}
 	if (i < 2)
+	{
+		free_stack(*stack);
+		free(gbl.line);
+		fclose(gbl.m_file);
 		stderr_op(line_number, "swap");
+	}
+
 	else
 	{
 		temp = help->prev;
