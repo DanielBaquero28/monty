@@ -32,16 +32,16 @@ int main(int argc, char **argv)
 	while (read != -1)
 	{
 		line_number++;
-		op_token = strtok(gbl.line, " \n\t\a\b");
-		op_token2 = strtok(NULL, " \n\t\a\b");
+		op_token = strtok(gbl.line, " \n\a\t\0");
+		op_token2 = strtok(NULL, " \n\a\t\0");
 		get_opcode(&stack, op_token, line_number);
 		read = getline(&(gbl.line), &len, gbl.m_file);
 	}
-
+	free(op_token2);
 	free(gbl.line);
 	free_stack(stack);
 	gbl.line = NULL;
 	fclose(gbl.m_file);
 
-	return (EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }
