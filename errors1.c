@@ -25,7 +25,6 @@ void stderr_no_instruction(char *op_token, unsigned int line_number)
 {
 	fprintf(stderr, "L<%u>: unknown instruction %s\n",
 		line_number, op_token);
-	free(op_token);
 	exit(EXIT_FAILURE);
 }
 

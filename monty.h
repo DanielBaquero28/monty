@@ -17,7 +17,6 @@
 
 extern char *op_token2;
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -47,6 +46,23 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct global_val_s - Global variables
+ * @m_file: File that is read.
+ * @line_number: Line number of the file.
+ *
+ * Description: Global variables
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
+typedef struct global_val_s
+{
+	FILE *m_file;
+	char *line;
+} global_t;
+
+
+extern global_t gbl;
 
 /* Main */
 int main(int argc, char **argv);
