@@ -40,11 +40,10 @@ header file for the project, contains the struct used throughout.
 <h6>monty.c</h6>
 Entry point of the interpreter. Feeds a line at a time to execute
 
+## Bugs
+Who doesn't ?
 
-
-
-
-### Credits
+### Authors
 All code written by
 [Daniel Baquero](https://github.com/DanielBaquero28)
 [Carlos Alvarez](https://github.com/charlyhackr/)
