@@ -37,6 +37,7 @@ void op_mod(stack_t **stack, unsigned int line_number)
 	else if (help->n == 0)
 	{
 		fprintf(stderr, "L<%d>: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
