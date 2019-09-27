@@ -23,13 +23,10 @@ void stderr_file_usage(void)
 
 void stderr_no_instruction(char *op_token, unsigned int line_number)
 {
-	char *string;
 
 	fprintf(stderr, "L<%u>: unknown instruction %s\n",
 		line_number, op_token);
 	free(op_token);
-	string = change_to_str(line_number);
-	free(string);
 	exit(EXIT_FAILURE);
 }
 
@@ -66,10 +63,7 @@ void stderr_fopen_file(char *filename)
 
 void stderr_int_empty(unsigned int line_number)
 {
-	char *string;
 
 	fprintf(stderr, "L<%u>: usage: push integer\n", line_number);
-	string = change_to_str(line_number);
-	free(string);
 	exit(EXIT_FAILURE);
 }
