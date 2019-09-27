@@ -36,6 +36,9 @@ void op_mod(stack_t **stack, unsigned int line_number)
 	}
 	else if (help->n == 0)
 	{
+		free(gbl.line);
+		free_stack(*stack);
+		fclose(gbl.m_file);
 		fprintf(stderr, "L<%d>: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}

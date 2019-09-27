@@ -41,7 +41,10 @@ int *get_opcode(stack_t **stack, char *op_token, unsigned int line_number)
 		}
 	}
 	if (label == 0)
+	{
+		free_stack(*stack);
+		fclose(gbl.m_file);
 		stderr_no_instruction(op_token, line_number);
-
+	}
 	return (0);
 }
