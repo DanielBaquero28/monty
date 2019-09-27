@@ -76,12 +76,13 @@ void op_pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *help;
 
-	if (stack == NULL)
+	if (*stack == NULL || stack == NULL)
+	{
+		free(gbl.line);
+		free_stack(*stack);
+		fclose(gbl.m_file);
 		stderr_pint(line_number);
-
-	if (*stack == NULL)
-		stderr_pint(line_number);
-
+	}
 	help = *stack;
 	while (help->next != NULL)
 		help = help->next;

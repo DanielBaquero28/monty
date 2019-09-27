@@ -8,11 +8,8 @@
 
 void stderr_pint(unsigned int line_number)
 {
-	char *string;
 
 	fprintf(stderr, "L<%d>: can't pint, stack empty\n", line_number);
-	string = change_to_str(line_number);
-	free(string);
 	exit(EXIT_FAILURE);
 }
 
@@ -24,11 +21,8 @@ void stderr_pint(unsigned int line_number)
 
 void stderr_pop(unsigned int line_number)
 {
-	char *string;
 
 	fprintf(stderr, "L<%u>: can't pop an empty stack\n", line_number);
-	string = change_to_str(line_number);
-	free(string);
 	exit(EXIT_FAILURE);
 }
 
@@ -41,11 +35,8 @@ void stderr_pop(unsigned int line_number)
 
 void stderr_op(unsigned int line_number, char *op)
 {
-	char *string;
 
 	fprintf(stderr, "L<%u>: can't %s, stack too short\n",
 		line_number, op);
-	string = change_to_str(line_number);
-	free(string);
 	exit(EXIT_FAILURE);
 }
