@@ -23,6 +23,10 @@ Current opcodes are:
 4. pint : peek the top of the stack
 5. swap : swap the top 2 elements of the stack
 6. queue : change the functionment of the stack to one of a queue. Enqueue to the bottom of the stack and dequeue from the top.
+7. stack : is the reverse of queue, it reestablishes the stack.
+8. nop : does not do anything
+<br>
+The monty language allows for any space before or after the opcode and its argument. ANy text after the argument is disregarded.
 
 ### Credits
 All code written by
