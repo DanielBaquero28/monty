@@ -33,6 +33,7 @@ void stderr_pop(unsigned int line_number)
 
 void stderr_op(unsigned int line_number, char *op)
 {
-	fprintf(stderr, "L<%u>: can't %s, stack too short\n", line_number, op);
+	fprintf(stderr, "L<%u>: can't %s, stack too short\n",
+		line_number, op);
 	exit(EXIT_FAILURE);
 }
