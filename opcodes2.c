@@ -111,8 +111,7 @@ void op_sub(stack_t **stack, unsigned int line_number)
 
 void op_div(stack_t **stack, unsigned int line_number)
 {
-	stack_t *help;
-	stack_t *temp;
+	stack_t *help, *temp;
 	int i = 1;
 
 	if (stack == NULL || *stack == NULL)
