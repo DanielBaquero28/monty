@@ -21,7 +21,8 @@ Current opcodes are:
 2. Pall : print all stack
 3. pop : pop the value at the top of the stack
 4. pint : peek the top of the stack
-
+5. swap : swap the top 2 elements of the stack
+6. queue : change the functionment of the stack to one of a queue. Enqueue to the bottom of the stack and dequeue from the top.
 
 ### Credits
 All code written by
