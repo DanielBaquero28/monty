@@ -15,11 +15,15 @@ void op_push(stack_t **stack, unsigned int line_number)
 	{
 		stderr_int_empty(line_number);
 		free_stack(*stack);
+		free(gbl.line);
+		fclose(gbl.m_file);
 	}
 	if (!is_number() || stack == NULL)
 	{
 		stderr_int_empty(line_number);
 		free_stack(*stack);
+		free(gbl.line);
+		fclose(gbl.m_file);
 	}
 	num = atoi(op_token2);
 	if (*stack == NULL)
@@ -105,6 +109,8 @@ void op_pop(stack_t **stack, unsigned int line_number)
 	{
 		stderr_pop(line_number);
 		free_stack(*stack);
+		free(gbl.line);
+		fclose(gbl.m_file);
 	}
 
 	if ((*stack)->prev == NULL && (*stack)->next == NULL)
